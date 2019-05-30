@@ -1,11 +1,9 @@
 edge = ARGV[0]
 
-lines = open ('procesos.data').readlines.map{|elem| elem.chomp}
+lines = open('procesos.data').readlines.map{|elem| elem.chomp }
 
-selected = lines.select{|number| number.to_i > 250}
+selected = lines.select{|number| number.to_i > edge }
 
-selected
-
-File.open('procesos_filtrados_2.data', 'w') do |file|
-	file.puts selected
+File.open('procesos_filtrados.data', 'w') do |file|
+    file.puts selected
 end
